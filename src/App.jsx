@@ -5,7 +5,8 @@ function App() {
   const [value, setValue] = useState("");
   const [list, setList] = useState([]);
   const [error, setError] = useState("");
-  const [isValueVaild, setValueVaild] = useState(false);
+  // const [isValueVaild, setValueVaild] = useState(false);
+  const isValueVaild = value.trim().length >= 3;
 
   const onInputButtonClick = () => {
     let promptValue = prompt("Введенное значение");
@@ -15,7 +16,7 @@ function App() {
     }
 
     setError("");
-    setValueVaild(true);
+    // setValueVaild(true);
     setValue(promptValue);
   };
 
@@ -24,7 +25,7 @@ function App() {
       setList((prev) => [...prev, { id: Date.now(), value: value }]);
       setValue("");
       setError("");
-      setValueVaild(false);
+      // setValueVaild(false);
     }
   };
 
